@@ -1,0 +1,99 @@
+{
+    "database" : {
+        "locale" : {
+            "url" : "localhost",
+            "port" : 3306,
+            "username" : "root",
+            "password" : "root",
+            "db_name" : "db_banca_boring"
+        },
+        "remoto" : {
+            "url" : "89.40.172.229",
+            "port" : 3306,
+            "username" : "wflzlmff_garueshop",
+            "password" : "anestesia!",
+            "db_name" : "boh"
+        }
+    },
+    "tables" : {
+        "anagrafica" : {
+            "name" : "anagrafica",
+            "pk" : "idCliente",
+            "cols" : [
+                "idCliente",
+                "Filiale_idFiliale",
+                "Banca_idConto",
+                "Nome",
+                "Cognome",
+                "Citta",
+                "Via",
+                "Cap",
+                "CF",
+                "Telefono",
+                "Email"
+            ]
+        },
+        "conto" : {
+            "name" : "conto",
+            "pk" : "idConto",
+            "cols" : [
+                "idConto",
+                "SaldoDisponibile",
+                "SaldoContabile",
+                "Tasso_idTasso",
+                "Abbonamento",
+                "Fido",
+                "Iban"
+            ]
+        },
+        "credenzialidipendente" : {
+            "name" : "credenzialidipendente",
+            "pk" : "UserDipendente",
+            "cols" : [
+                "Password",
+                "UserDipendente",
+                "Filiale_idFiliale"
+            ]
+        },
+        "credenzialiutente" : {
+            "name" : "credenzialiutente",
+            "pk" : "CodCliente",
+            "pk1" : "Anagrafica_idCliente",
+            "cols" : [
+                "Password",
+                "CodCliente",
+                "Anagrafica_idCliente"
+            ]
+        },
+        "filiale" : {
+            "name" : "filiale",
+            "pk" : "idFiliale",
+            "cols" : [
+                "idFiliale",
+                "NomeFiliale",
+                "Citta",
+                "Via"
+            ]
+        },
+        "movimento" : {
+            "name" : "movimento",
+            "pk" : "idMovimento",
+            "cols" : [
+                "idMovimento",
+                "Da_idConto",
+                "A_idConto",
+                "Importo",
+                "Data"
+            ]
+        },
+        "tasso" : {
+            "name" : "tasso",
+            "pk" : "idTasso",
+            "cols" : [
+                "idTasso",
+                "Percentuale",
+                "DataEntrataInVigore"
+            ]
+        }
+    }
+}

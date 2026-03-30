@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>FINALBOSS</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>media</name>
+			<type>2</type>
+			<location>C:/Users/MARK/Desktop/SaiCredito - Banca/media</location>
+		</link>
+		<link>
+			<name>source html - frontend</name>
+			<type>2</type>
+			<location>C:/Users/MARK/Desktop/SaiCredito - Banca/source html - frontend</location>
+		</link>
+	</linkedResources>
+</projectDescription>

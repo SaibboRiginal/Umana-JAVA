@@ -1,0 +1,535 @@
+body, html {
+    margin: 0px;
+    background: black;
+    color: #f7f7f7;
+    scroll-behavior: smooth;
+}
+div {
+    box-sizing: border-box;
+}
+:root {
+    --menu-height: 50px;
+}
+.header {
+    position: fixed;
+    top: 0px;
+    height: var(--menu-height);
+    width: 100%;
+    background: rgba(0, 255, 42, 0.9);
+    color: black;
+    opacity: 0.8;
+    z-index: 100;
+}
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;   
+}
+.showAlert {
+    transition: 1s ease all;
+    display: block!important;
+    opacity: 1!important;
+}
+.showEntrance {
+    display: block!important;
+    position: absolute;
+    top: calc(25vw + 100px);
+    min-height: 200px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #333333; 
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgreen; 
+    border-radius: 15px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+}
+/* INDEX */
+body#index .main {
+    z-index: 0;
+}
+body#index .main::after {
+    content: "";
+    background-image: url("../media/wp4.jpg");
+    background-size: cover;                    
+    background-repeat: no-repeat;
+    background-position: center center;   
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -5;   
+}
+#logon, #register {
+    display:none;
+    width: 100%;
+}
+body#index .start {  
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body#index .welcome {
+    width: 100%;
+    text-align: center;
+    margin: 5vw 0px;
+    z-index: 5;
+}
+body#index .welcome span {
+    font-size: 6vw;
+    z-index: 5;
+}
+body#index .welcome span.u {
+    font-size: 8vw;
+    z-index: 5;
+}
+body#index .welcome span.important {
+    font-size: 10vw;
+    font-weight: 600;
+    color: rgba(255, 10, 1, 0.6);
+    z-index: 5;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+#logon form
+, #register form {
+    border-radius: 15px;
+    border: 2px solid;
+    width: 40%;
+    padding: 5px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    z-index: 10;
+    background: black;
+}
+#logon form .text
+, #register form .text {
+    width: 49%;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.1em;
+}
+#logon form input[type="text"]
+, #register form input[type="text"]
+, #logon form input[type="password"]
+, #register form input[type="password"] {
+    border-style: groove;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 3px 6px;
+    width: 49%;
+    display: inline-block;
+    height: 2em;
+}
+#logon form input[type="submit"]
+, #register form input[type="submit"] {
+    padding: 3px 6px;
+    width: 30%;
+    display: inline-block;
+    height: 2em;
+    margin: 10px 30%;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: green;
+    background: lightgreen;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+body#index .buttons {
+    width: 100%;
+    display: inline-block;
+    z-index: 10;
+}
+body#index .buttons input {
+    display: block;
+    width: 100px;
+    margin: 0px auto;
+}
+body#index .buttons input[type="button"] {
+    border-style: solid;
+    border-radius: 2em;
+    border-width: 1px;
+    border-color: lightpink;
+    background: lightcoral;
+    width: 20vw;
+    font-size: 1.2em;
+    height: 2em;
+    color: antiquewhite;
+}
+body#index .buttons input[type="submit"] {
+    color: white;
+    background: transparent;
+    border-width: 0px;
+    font-size: 0.8em;    
+    padding: 10px;
+}
+body#index .buttons input[type="submit"]:hover {
+    text-decoration: underline;
+}
+#logon form .exit::before
+, #register form .exit::before {    
+    content: "X";
+    display: block;
+    width: 50px;
+    text-align: center;
+}
+#logon form .exit
+, #register form .exit {   
+    position: relative;
+    left: calc(100% - 60px);
+    display: block;
+    width: fit-content;
+    border: 1px solid transparent;
+    margin-top: 5px;
+}
+#logon form .exit:hover
+, #register form .exit:hover {    
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    border-radius: 25px;
+}
+body#index .effects {
+    width: 110%;
+    height: 60%;
+    bottom: -25%;
+    left: -5%;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+}
+body#index .particles {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../media/waves2.png");
+    background-size: cover;                    
+    background-repeat: no-repeat;
+    background-position: center center;     
+    opacity: 0.95;  
+    z-index: -1;
+}
+/*
+body#index .effects {
+    width: 110%;
+    height: 100%;
+    bottom: -50%;
+    left: -5%;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+}
+body#index .particles {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../media/waves4.png");
+    background-size: cover;                    
+    background-repeat: no-repeat;
+    background-position: center center;     
+    opacity: 0.95;  
+    z-index: -1;
+}*/
+/* MyPage */
+body#mypage {
+    background: none;
+}
+body#mypage .main {
+    top: calc(var(--menu-height) + 10px);
+    padding: 25px;
+    height: fit-content;
+    padding-bottom: 0px;
+}
+body#mypage::after {
+    content: "";
+    background-image: url("../media/wp4.jpg");
+    background-size: cover;                    
+    background-repeat: no-repeat;
+    background-position: center center;   
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+body#mypage .mypage {
+    z-index: 1;
+}
+body#mypage .menu {
+    width: 100%;
+}
+body#mypage .logo,
+body#mypage .logout {
+    position: absolute;
+}
+body#mypage .logo {
+    left: calc(50% - 25px);
+    height: 100%;
+    width: 50px;
+}
+body#mypage .logo img {
+    height: 100%;
+    width: 100%;
+}
+body#mypage .menu form {
+    display: inline-block;
+}
+body#mypage .logout {
+    line-height: calc(var(--menu-height) - 2px);
+    right: 15px;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    border: 0px solid transparent;
+    font-size: 1em;
+    transition: 1s ease all;
+}
+body#mypage .logout:hover {
+    background: RGBA(0,0,0,0.2);
+}
+body#mypage .mypage {
+    width: 100%;
+}
+body#mypage .info {
+    width: 100%;
+    background: rgb(118, 194, 118);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+body#mypage .panel-wrapper {
+    width: 100%;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px; 
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+body#mypage .panel {
+    display: inline-block;
+    width: 100%;
+    background: lightgreen;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    max-height: 500px;
+    overflow: hidden;
+}
+body#mypage .info .userdata,
+body#mypage .info .uservalue {
+    display: inline-block;
+    width: auto;
+    margin: 10px 5px;
+    font-size: 1.1em;
+}
+body#mypage .info .uservalue {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+body#mypage .info .username {
+    font-weight: 600;
+    font-size: 2em;
+    margin: 5px 2px;
+}
+body#mypage .money {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-right: 50px;
+}
+form#bonifico,
+form#delete {
+
+}
+form#bonifico .text {
+    width: 49%;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.1em;
+}
+form#bonifico input[type="text"] {
+    border-style: groove;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 3px 6px;
+    width: 49%;
+    display: inline-block;
+    height: 2em;
+}
+form#bonifico input[type="submit"]{
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: green;
+    padding: 3px 6px;
+    width: 25%;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 600;
+    height: 1.8em;
+    margin: 20px 0px 0px calc(74% - 7px);
+    background: lightblue;
+}    
+form#delete input[type="submit"],
+form#estratto input[type="submit"] {
+    padding: 3px 6px;
+    display: inline-block;
+    background: transparent;
+    margin-left: 5px;
+    padding-left: 0px;
+    border-width: 0px;
+    font-size: 1em;
+}     
+form#delete input[type="submit"]:hover,
+form#estratto input[type="submit"]:hover {
+    background: rgb(173, 216, 230, 0.5);
+}
+body#mypage table{
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    color: #333333;
+}
+body#mypage table td:nth-child(n+1),
+body#mypage table th:nth-child(n+1),
+body#mypage table.infos td:nth-child(n+1),
+body#mypage table.infos th:nth-child(n+1){
+    border-right: 1px solid black;
+}
+body#mypage table td:nth-child(1),
+body#mypage table th:nth-child(1),
+body#mypage table.infos td:nth-child(1),
+body#mypage table.infos th:nth-child(1){
+    border-left: 1px solid black;
+}
+body#mypage table th,
+body#mypage table.infos th{
+    border-top: 1px solid black;
+}
+body#mypage table td,
+body#mypage table th,
+body#mypage table.infos td,
+body#mypage table.infos th{
+    border-bottom: 1px solid black;
+}
+
+body#mypage table td,
+body#mypage table th,
+body#mypage table.infos td,
+body#mypage table.infos th{
+    overflow: hidden; /*hidden table cells*/
+}
+
+body#mypage .table {
+    max-height: 380px;
+    overflow-y: scroll;
+}
+body#mypage table.infos {
+    width: calc(100% - 15px);
+}
+body#mypage .panel .title {
+    color: dodgerblue;
+    font-weight: 600;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+body#mypage .panel form {
+    color: dodgerblue;
+}
+/* width */
+body#mypage .table::-webkit-scrollbar {
+    width: 15px;
+}
+/* Track */
+body#mypage .table::-webkit-scrollbar-track {
+    background: #333333; 
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
+/* Handle */
+body#mypage .table::-webkit-scrollbar-thumb {
+    background: dodgerblue; 
+    border-radius: 15px;
+}
+/* Handle on hover */
+body#mypage .table::-webkit-scrollbar-thumb:hover {
+    background: lightblue;
+}
+body#mypage .panel .dateselect {
+    color: #333333;
+}
+body#mypage .panel .dateda {
+    display: inline-block;
+}
+body#mypage .panel .datea {
+    display: inline-block;
+}
+body#mypage .panel .dateselect input[type="date"] {
+    margin-left: 12px;
+    border-style: groove;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 3px 6px;
+    height: 2em;
+}
+body#mypage .panel .datea input[type="date"] {
+    margin-left: 12px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: 1s ease all;
+    width: 95%;
+    margin: 0px 2.5%;
+    position: fixed;
+    bottom: -100px;    
+    z-index: 999999;
+}
+  
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+  
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.closebtn:hover {
+    color: black;
+}
